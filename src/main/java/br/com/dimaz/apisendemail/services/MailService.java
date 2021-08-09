@@ -62,7 +62,6 @@ public class MailService {
 
         helper.setSubject(mail.getSubject());
         helper.setText(mail.getBody(), true);
-        
         helper.setTo(mail.getTo());
         
 		return message;
