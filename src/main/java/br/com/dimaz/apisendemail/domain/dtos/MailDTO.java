@@ -14,9 +14,9 @@ public class MailDTO {
 	*	
 	*	alem destes campo tem outros como cc cco 
 	*/
-	private String para;
+	private String to;
 	
-	private String assunto;
+	private String subject;
 	
-	private String corpo;
+	private String body;
 }
