@@ -1,9 +1,16 @@
 package br.com.dimaz.apisendemail.controllers;
 
+import java.io.UnsupportedEncodingException;
+
+import javax.mail.MessagingException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.amazonaws.services.simpleemail.model.MessageRejectedException;
 
 import br.com.dimaz.apisendemail.domain.dtos.MailDTO;
 import br.com.dimaz.apisendemail.domain.response.SuccessResponse;
@@ -19,7 +26,7 @@ public class MailController {
 		this.service = service;
 	}
 	
-	public ResponseEntity<?> sendMail(@RequestBody MailDTO mail) {
+	public ResponseEntity<?> sendMail(@RequestBody MailDTO mail) throws MessagingException, MessageRejectedException, UnsupportedEncodingException {
 		service.validateAndSendMail(mail);
         return ResponseEntity.ok(new SuccessResponse("success"));
 	}
