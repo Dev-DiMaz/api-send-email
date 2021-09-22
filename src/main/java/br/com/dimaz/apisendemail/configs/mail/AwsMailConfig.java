@@ -30,7 +30,7 @@ public class AwsMailConfig {
 				.withCredentials(
 						new AWSStaticCredentialsProvider(
 								new BasicAWSCredentials(config.awsAccessKey, config.awsSecretKey)))
-				.withRegion(Regions.CA_CENTRAL_1)
+				.withRegion(Regions.US_EAST_1)
 				.build();
 	}
 	

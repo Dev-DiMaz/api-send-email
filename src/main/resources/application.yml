@@ -6,7 +6,7 @@ server:
 cloud:
   aws:
     region:
-      static: ${REGION:ca-central-1}
+      static: ${REGION:us-east-1}
     
     stack:
       auto: false
